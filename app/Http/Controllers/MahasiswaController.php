@@ -10,7 +10,7 @@ class MahasiswaController extends Controller
 {
     public function index()
     {
-        $mahasiswa = Mahasiswa::all(); // select * from Mahasiswa
+        $mahasiswa = Mahasiswa::with(['user'])->get(); // select * from Mahasiswa
         return view('mahasiswa.index', compact('mahasiswa'));
     }
 

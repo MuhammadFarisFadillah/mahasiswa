@@ -15,18 +15,21 @@
                             <th>No.</th>
                             <th>NPM</th>
                             <th>Nama Lengkap</th>
-                            <th>TTL</th>
+                            <th>Tempat, Tanggal Lahir</th>
                             <th>Jenis Kelamin</th>
                             <th>Telepon</th>
                             <th>Alamat</th>
                             <th>AKSI</th>
                         </tr>
+                        @php
+                            $no = 1;
+                        @endphp
 
                         @foreach ($mahasiswa as $mhs)
                         <tr>
-                            <td>{{ $mhs->id }}</td>
+                            <td>{{ $no++ }}</td>
                             <td>{{ $mhs->npm }}</td>
-                            <td>{{ $mhs->nama_mahasiswa }}</td>
+                            <td>{{ $mhs->nama_mahasiswa}}</td>
                             <td>{{ $mhs->tempat_lahir.', '.$mhs->tgl_lahir}}</td>
                             <td>{{ $mhs->jenis_kelamin}}</td>
                             <td>{{ $mhs->telepon }}</td>
